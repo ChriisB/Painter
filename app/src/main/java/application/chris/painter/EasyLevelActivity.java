@@ -71,6 +71,8 @@ public class EasyLevelActivity extends AppCompatActivity {
         setContentView(R.layout.activity_easy_level);
 
     }
+
+
     /*
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {

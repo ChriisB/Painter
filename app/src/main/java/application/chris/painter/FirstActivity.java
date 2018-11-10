@@ -74,6 +74,7 @@ public class FirstActivity extends AppCompatActivity {
         setContentView(R.layout.activity_first);
 
         StartButton();
+        exitButton();
 
     }
 
@@ -85,6 +86,17 @@ public class FirstActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(FirstActivity.this, SecondActivity.class));
+            }
+        });
+    }
+
+    public void exitButton() {
+        final ImageButton exitButton = (ImageButton) findViewById(R.id.exitButton);
+
+        exitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }
