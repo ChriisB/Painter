@@ -1,14 +1,91 @@
 package application.chris.painter;
 
 import android.annotation.SuppressLint;
-import android.support.v7.app.ActionBar;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.os.Handler;
-import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
+
+import java.util.Random;
 
 public class EasyLevelActivity extends AppCompatActivity {
+
+    int random, oldValue;
+    //Random rnd = new Random();
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_easy_level);
+
+        backButton2();
+        changeText();
+    }
+
+    public void backButton2() {
+        final ImageButton backButton2 = (ImageButton) findViewById(R.id.back_button);
+
+        backButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+    }
+
+    public void changeText(){
+
+        final String[] namesOfColors = {"red", "green", "gray"};
+        final int[] arrayColors = {R.color.colorRed, R.color.colorGreen, R.color.colorGrey};
+        final TextView mainColor = (TextView) findViewById(R.id.mainSample);
+        Button sample_first = (Button) findViewById(R.id.sampleFirst);
+        Button sample_second = (Button) findViewById(R.id.sampleSecond);
+        Button sample_third = (Button) findViewById(R.id.sampleThird);
+
+        sample_first.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ResourceAsColor")
+            @Override
+            public void onClick(View v) {
+                random = (int) (Math.random() * arrayColors.length);
+                //random_color = (int) (Math.random() * arrayColors.length);
+                //int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
+                if(random == oldValue){
+                    random = (int) (Math.random() * arrayColors.length);
+                    //random_color = (int) (Math.random() * arrayColors.length);
+                }
+                //mainColor.setText(namesOfColors[random]);
+                mainColor.setTextColor(R.color.colorGreen);
+                oldValue = random;
+            }
+        });
+
+        sample_second.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                random = (int) (Math.random() * namesOfColors.length);
+                if(random == oldValue){
+                    random = (int) (Math.random() * namesOfColors.length);
+                }
+                mainColor.setText(namesOfColors[random]);
+                oldValue = random;
+            }
+        });
+
+        sample_third.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                random = (int) (Math.random() * namesOfColors.length);
+                if(random == oldValue){
+                    random = (int) (Math.random() * namesOfColors.length);
+                }
+                mainColor.setText(namesOfColors[random]);
+                oldValue = random;
+            }
+        });
+    }
 
     /*
     private static final boolean AUTO_HIDE = true;
@@ -64,13 +141,7 @@ public class EasyLevelActivity extends AppCompatActivity {
         }
     };
     */
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_easy_level);
-
-    }
 
 
     /*

@@ -7,10 +7,15 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.TextView;
 
 public class HardLevelActivity extends AppCompatActivity {
-    /*
 
+    String[] namesOfColors = {"red", "green", "gray", "violet", "brown", "pink", "orange", "blue", "yellow"};
+
+    TextView mainColor = (TextView) findViewById(R.id.mainSample);
+
+    /*
     private static final boolean AUTO_HIDE = true;
     private static final int AUTO_HIDE_DELAY_MILLIS = 3000;
     private static final int UI_ANIMATION_DELAY = 300;

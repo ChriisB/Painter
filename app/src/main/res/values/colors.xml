@@ -3,6 +3,30 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-
     <color name="black_overlay">#66000000</color>
+
+    <color name="colorRed">#ff000d</color>
+    <color name="colorGrey">#505050</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorGreen">#1ac60e</color>
+    <color name="colorViolet">#8800ff</color>
+    <color name="colorBrown">#803418</color>
+    <color name="colorPink">#ff00d9</color>
+    <color name="colorOrange">#ff6600</color>
+    <color name="colorBlue">#000dff</color>
+    <color name="colorYellow">#ffd900</color>
+
+    <string-array name="colors">
+        <item>@color/colorRed</item>
+        <item>@color/colorGrey</item>
+        <item>@color/colorBlack</item>
+        <item>@color/colorGreen</item>
+        <item>@color/colorViolet</item>
+        <item>@color/colorBrown</item>
+        <item>@color/colorPink</item>
+        <item>@color/colorOrange</item>
+        <item>@color/colorBlue</item>
+        <item>@color/colorYellow</item>
+    </string-array>
+
 </resources>

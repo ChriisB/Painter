@@ -10,10 +10,17 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
+
+import static application.chris.painter.R.id.sampleFirst;
 
 
 public class SecondActivity extends AppCompatActivity {
+
+
+
     /*
     private static final boolean AUTO_HIDE = true;
 
@@ -73,7 +80,21 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
 
         LevelChooseButtons();
+        backButton1();
     }
+
+    public void backButton1() {
+        final ImageButton backButton = (ImageButton) findViewById(R.id.back_button);
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+    }
+
+
 
     public void LevelChooseButtons(){
         final ImageButton  EasyLevelButton = (ImageButton) findViewById(R.id.easyButton);
@@ -102,6 +123,12 @@ public class SecondActivity extends AppCompatActivity {
         });
 
     }
+
+
+
+
+
+
     /*
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {

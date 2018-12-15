@@ -10,8 +10,12 @@ import android.view.View;
 
 
 public class MediumLevelActivity extends AppCompatActivity {
-    /*
 
+
+    String[] namesOfColors = {"red", "green", "gray", "violet", "brown", "pink"};
+
+
+    /*
     private static final boolean AUTO_HIDE = true;
 
 
