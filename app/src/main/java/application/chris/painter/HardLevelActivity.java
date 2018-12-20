@@ -11,9 +11,9 @@ import android.widget.TextView;
 
 public class HardLevelActivity extends AppCompatActivity {
 
-    String[] namesOfColors = {"red", "green", "gray", "violet", "brown", "pink", "orange", "blue", "yellow"};
+    //String[] namesOfColors = {"red", "green", "gray", "violet", "brown", "pink", "orange", "blue", "yellow"};
 
-    TextView mainColor = (TextView) findViewById(R.id.mainSample);
+    //TextView mainColor = (TextView) findViewById(R.id.mainSample);
 
     /*
     private static final boolean AUTO_HIDE = true;

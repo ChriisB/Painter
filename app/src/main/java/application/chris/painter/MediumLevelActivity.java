@@ -12,7 +12,7 @@ import android.view.View;
 public class MediumLevelActivity extends AppCompatActivity {
 
 
-    String[] namesOfColors = {"red", "green", "gray", "violet", "brown", "pink"};
+    //String[] namesOfColors = {"red", "green", "gray", "violet", "brown", "pink"};
 
 
     /*

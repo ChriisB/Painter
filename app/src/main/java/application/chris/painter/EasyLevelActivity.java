@@ -22,7 +22,7 @@ public class EasyLevelActivity extends AppCompatActivity {
         setContentView(R.layout.activity_easy_level);
 
         backButton2();
-        changeText();
+        changeTextAndColorRandomly();
     }
 
     public void backButton2() {
@@ -36,10 +36,10 @@ public class EasyLevelActivity extends AppCompatActivity {
         });
     }
 
-    public void changeText(){
+    public void changeTextAndColorRandomly(){
 
         final String[] namesOfColors = {"red", "green", "gray"};
-        final int[] arrayColors = {R.color.colorRed, R.color.colorGreen, R.color.colorGrey};
+        final int[] arrayColors = {Color.parseColor("#ff000d"), Color.parseColor("#505050"), Color.parseColor("#1ac60e")};
         final TextView mainColor = (TextView) findViewById(R.id.mainSample);
         Button sample_first = (Button) findViewById(R.id.sampleFirst);
         Button sample_second = (Button) findViewById(R.id.sampleSecond);
@@ -50,14 +50,16 @@ public class EasyLevelActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 random = (int) (Math.random() * arrayColors.length);
-                //random_color = (int) (Math.random() * arrayColors.length);
-                //int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
                 if(random == oldValue){
                     random = (int) (Math.random() * arrayColors.length);
                     //random_color = (int) (Math.random() * arrayColors.length);
                 }
-                //mainColor.setText(namesOfColors[random]);
-                mainColor.setTextColor(R.color.colorGreen);
+                mainColor.setText(namesOfColors[random]);
+                if(random == oldValue){
+                    random = (int) (Math.random() * arrayColors.length);
+                    //random_color = (int) (Math.random() * arrayColors.length);
+                }
+                mainColor.setTextColor(arrayColors[random]);
                 oldValue = random;
             }
         });
@@ -70,6 +72,11 @@ public class EasyLevelActivity extends AppCompatActivity {
                     random = (int) (Math.random() * namesOfColors.length);
                 }
                 mainColor.setText(namesOfColors[random]);
+                if(random == oldValue){
+                    random = (int) (Math.random() * arrayColors.length);
+                    //random_color = (int) (Math.random() * arrayColors.length);
+                }
+                mainColor.setTextColor(arrayColors[random]);
                 oldValue = random;
             }
         });
@@ -82,6 +89,11 @@ public class EasyLevelActivity extends AppCompatActivity {
                     random = (int) (Math.random() * namesOfColors.length);
                 }
                 mainColor.setText(namesOfColors[random]);
+                if(random == oldValue){
+                    random = (int) (Math.random() * arrayColors.length);
+                    //random_color = (int) (Math.random() * arrayColors.length);
+                }
+                mainColor.setTextColor(arrayColors[random]);
                 oldValue = random;
             }
         });
