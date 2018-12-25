@@ -80,10 +80,10 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
 
         LevelChooseButtons();
-        backButton1();
+        backButton();
     }
 
-    public void backButton1() {
+    public void backButton() {
         final ImageButton backButton = (ImageButton) findViewById(R.id.back_button);
 
         backButton.setOnClickListener(new View.OnClickListener() {

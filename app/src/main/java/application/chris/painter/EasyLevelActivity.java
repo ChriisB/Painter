@@ -2,9 +2,12 @@ package application.chris.painter;
 
 import android.annotation.SuppressLint;
 import android.graphics.Color;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -19,16 +22,34 @@ public class EasyLevelActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_easy_level);
 
-        backButton2();
+
+        backButton1();
         changeTextAndColorRandomly();
+
+        final TextView timer = (TextView) findViewById(R.id.timer);
+        new CountDownTimer(31000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                timer.setText("" + millisUntilFinished / 1000);
+            }
+
+            public void onFinish() {
+                timer.setText("done!");
+            }
+        }.start();
+
+
+
     }
 
-    public void backButton2() {
-        final ImageButton backButton2 = (ImageButton) findViewById(R.id.back_button);
+    public void backButton1() {
+        final ImageButton backButton1 = (ImageButton) findViewById(R.id.back_button);
 
-        backButton2.setOnClickListener(new View.OnClickListener() {
+        backButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
@@ -39,11 +60,14 @@ public class EasyLevelActivity extends AppCompatActivity {
     public void changeTextAndColorRandomly(){
 
         final String[] namesOfColors = {"red", "green", "gray"};
-        final int[] arrayColors = {Color.parseColor("#ff000d"), Color.parseColor("#505050"), Color.parseColor("#1ac60e")};
+        final int[] arrayColors = {Color.parseColor("#ff000d"), Color.parseColor("#1ac60e"), Color.parseColor("#505050")};
         final TextView mainColor = (TextView) findViewById(R.id.mainSample);
-        Button sample_first = (Button) findViewById(R.id.sampleFirst);
+        final Button sample_first = (Button) findViewById(R.id.sampleFirst);
         Button sample_second = (Button) findViewById(R.id.sampleSecond);
         Button sample_third = (Button) findViewById(R.id.sampleThird);
+        final TextView point_counter = (TextView) findViewById(R.id.points);
+        final int[] counter = {0};
+
 
         sample_first.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("ResourceAsColor")
@@ -60,6 +84,16 @@ public class EasyLevelActivity extends AppCompatActivity {
                     //random_color = (int) (Math.random() * arrayColors.length);
                 }
                 mainColor.setTextColor(arrayColors[random]);
+
+
+                String text = (String) sample_first.getText();
+                String mainText = (String) mainColor.getText();
+
+                if(text.equals(mainText)){
+                    counter[0] += 10;
+                    String counterS = counter[0] + " pkt.";
+                    point_counter.setText(counterS);
+                }
                 oldValue = random;
             }
         });
@@ -74,7 +108,6 @@ public class EasyLevelActivity extends AppCompatActivity {
                 mainColor.setText(namesOfColors[random]);
                 if(random == oldValue){
                     random = (int) (Math.random() * arrayColors.length);
-                    //random_color = (int) (Math.random() * arrayColors.length);
                 }
                 mainColor.setTextColor(arrayColors[random]);
                 oldValue = random;
@@ -91,7 +124,6 @@ public class EasyLevelActivity extends AppCompatActivity {
                 mainColor.setText(namesOfColors[random]);
                 if(random == oldValue){
                     random = (int) (Math.random() * arrayColors.length);
-                    //random_color = (int) (Math.random() * arrayColors.length);
                 }
                 mainColor.setTextColor(arrayColors[random]);
                 oldValue = random;
