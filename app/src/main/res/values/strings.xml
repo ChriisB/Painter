@@ -14,6 +14,8 @@
 
     <string name="title_activity_hard_level">HardLevelActivity</string>
 
+    <string name="title_activity_result">ResultActivity</string>
+
     <string name="red">red</string>
     <string name="black">black</string>
     <string name="orange">orange</string>

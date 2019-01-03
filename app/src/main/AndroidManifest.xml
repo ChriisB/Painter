@@ -46,11 +46,16 @@
             android:screenOrientation="landscape"
             android:theme="@style/FullscreenTheme" />
 
+        <activity android:name=".Result"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_result"
+            android:screenOrientation="landscape"
+            android:theme="@style/FullscreenTheme"/>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".Result"></activity>
     </application>
 
 </manifest>

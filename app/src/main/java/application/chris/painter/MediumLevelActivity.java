@@ -26,7 +26,7 @@ public class MediumLevelActivity extends LevelActivity {
         mainSample = findViewById(R.id.main_sample);
         point_counter = findViewById(R.id.points);
         timer = findViewById(R.id.timer);
-
+        intent.putExtra("activity_name", MediumLevelActivity.class);
         backButton();
         counter();
 
