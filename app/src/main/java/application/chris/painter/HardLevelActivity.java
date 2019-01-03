@@ -23,16 +23,22 @@ public class HardLevelActivity extends LevelActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_hard_level);
+        mainSample = findViewById(R.id.main_sample);
+        point_counter = findViewById(R.id.points);
+        timer = findViewById(R.id.timer);
 
+        backButton();
+        counter();
         colors.put(getResources().getText(R.string.red).toString(), ContextCompat.getColor(this, R.color.red));
-        colors.put("green", ContextCompat.getColor(this, R.color.green));
-        colors.put("grey", ContextCompat.getColor(this, R.color.grey));
-        colors.put("violet", ContextCompat.getColor(this, R.color.violet));
-        colors.put("pink", ContextCompat.getColor(this, R.color.pink));
-        colors.put("brown", ContextCompat.getColor(this, R.color.brown));
-        colors.put("blue", ContextCompat.getColor(this, R.color.blue));
-        colors.put("yellow", ContextCompat.getColor(this, R.color.yellow));
-        colors.put("orange", ContextCompat.getColor(this, R.color.orange));
+        colors.put(getResources().getText(R.string.cyan).toString(), ContextCompat.getColor(this, R.color.cyan));
+        colors.put(getResources().getText(R.string.grey).toString(), ContextCompat.getColor(this, R.color.grey));
+        colors.put(getResources().getText(R.string.violet).toString(), ContextCompat.getColor(this, R.color.violet));
+        colors.put(getResources().getText(R.string.pink).toString(), ContextCompat.getColor(this, R.color.pink));
+        colors.put(getResources().getText(R.string.brown).toString(), ContextCompat.getColor(this, R.color.brown));
+        colors.put(getResources().getText(R.string.blue).toString(), ContextCompat.getColor(this, R.color.blue));
+        colors.put(getResources().getText(R.string.yellow).toString(), ContextCompat.getColor(this, R.color.yellow));
+        colors.put(getResources().getText(R.string.orange).toString(), ContextCompat.getColor(this, R.color.orange));
 
         buttons.add((Button) findViewById(R.id.sample1));
         buttons.add((Button) findViewById(R.id.sample2));
@@ -47,5 +53,4 @@ public class HardLevelActivity extends LevelActivity {
         randomlyChangeColors();
         addButtonListener();
     }
-
 }

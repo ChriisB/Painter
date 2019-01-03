@@ -20,9 +20,10 @@
     <string name="blue">blue</string>
     <string name="violet">violet</string>
     <string name="grey">grey</string>
-    <string name="green">green</string>
+    <string name="cyan">cyan</string>
     <string name="brown">brown</string>
     <string name="yellow">yellow</string>
     <string name="pink">pink</string>
+    <string name="textview">TextView</string>
 
 </resources>

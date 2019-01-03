@@ -7,7 +7,7 @@
 
     <color name="red">#ff000d</color>
     <color name="grey">#505050</color>
-    <color name="green">#0fe200</color>
+    <color name="cyan">#02f7d7</color>
     <color name="black">#000000</color>
     <color name="violet">#8800ff</color>
     <color name="brown">#803418</color>
@@ -21,7 +21,7 @@
         <item>@color/red</item>
         <item>@color/grey</item>
         <item>@color/black</item>
-        <item>@color/green</item>
+        <item>@color/cyan</item>
         <item>@color/violet</item>
         <item>@color/brown</item>
         <item>@color/pink</item>

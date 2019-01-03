@@ -87,7 +87,7 @@
             android:ems="10"
             android:fontFamily="@font/architects_daughter"
             android:inputType="number"
-            android:text="   .pkt"
+            android:text=" 0 .pkt"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -132,7 +132,7 @@
             android:fontFamily="@font/architects_daughter"
             android:text="@string/grey"
             android:textAllCaps="false"
-            android:textColor="@color/green"
+            android:textColor="@color/cyan"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -194,7 +194,7 @@
             android:layout_marginBottom="125dp"
             android:background="@drawable/ic_sample1_obszar_roboczy_1"
             android:fontFamily="@font/architects_daughter"
-            android:text="@string/green"
+            android:text="@string/cyan"
             android:textAllCaps="false"
             android:textColor="@color/red"
             android:textSize="30sp"
