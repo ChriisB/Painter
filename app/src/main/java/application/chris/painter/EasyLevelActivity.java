@@ -12,12 +12,12 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import java.util.Objects;
 import java.util.Random;
 
-public class EasyLevelActivity extends AppCompatActivity {
+public class EasyLevelActivity extends LevelActivity {
 
     int random, oldValue;
-    //Random rnd = new Random();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,28 +26,23 @@ public class EasyLevelActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_easy_level);
 
+        //final int colorStr = (String) findViewById(R.color.red);
+
+        //getColorName();
+
+        //final int colorStr = mainColor.getCurrentTextColor();     //!!!!!!!!!!!!!!!
 
         backButton1();
-        changeTextAndColorRandomly();
-
-        final TextView timer = (TextView) findViewById(R.id.timer);
-        new CountDownTimer(31000, 1000) {
-
-            public void onTick(long millisUntilFinished) {
-                timer.setText("" + millisUntilFinished / 1000);
-            }
-
-            public void onFinish() {
-                timer.setText("done!");
-            }
-        }.start();
-
-
+        //changeTextAndColorRandomly();
+        //addPoints();
+        //counter();
+        //cos();
+        //findColor();
 
     }
 
     public void backButton1() {
-        final ImageButton backButton1 = (ImageButton) findViewById(R.id.back_button);
+        final ImageButton backButton1 = findViewById(R.id.back_button);
 
         backButton1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,18 +51,17 @@ public class EasyLevelActivity extends AppCompatActivity {
             }
         });
     }
-
+/*
     public void changeTextAndColorRandomly(){
-
         final String[] namesOfColors = {"red", "green", "gray"};
-        final int[] arrayColors = {Color.parseColor("#ff000d"), Color.parseColor("#1ac60e"), Color.parseColor("#505050")};
-        final TextView mainColor = (TextView) findViewById(R.id.mainSample);
-        final Button sample_first = (Button) findViewById(R.id.sampleFirst);
-        Button sample_second = (Button) findViewById(R.id.sampleSecond);
-        Button sample_third = (Button) findViewById(R.id.sampleThird);
-        final TextView point_counter = (TextView) findViewById(R.id.points);
+        final int[] arrayColors = {Color.parseColor("#ff000d"), Color.parseColor("#0fe200"), Color.parseColor("#505050")};
+        //final int[] arrayColors = {R.color.red, R.color.green, R.color.grey};
+//        final Button sample_first = findViewById(R.id.sampleFirst);
+//        final Button sample_second = findViewById(R.id.sampleSecond);
+//        final Button sample_third = findViewById(R.id.sampleThird);
+        final TextView mainColor = findViewById(R.id.mainSample);
+        final TextView point_counter = findViewById(R.id.points);
         final int[] counter = {0};
-
 
         sample_first.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("ResourceAsColor")
@@ -84,17 +78,49 @@ public class EasyLevelActivity extends AppCompatActivity {
                     //random_color = (int) (Math.random() * arrayColors.length);
                 }
                 mainColor.setTextColor(arrayColors[random]);
+                oldValue = random;
+                //point_counter.setText(buttonColorName);
 
+                int name_color = mainColor.getCurrentTextColor();
+                String buttonColorName = (String) sample_first.getText();
+                String color = "green";
 
-                String text = (String) sample_first.getText();
-                String mainText = (String) mainColor.getText();
+                //point_counter.setText("" + name_color);
 
-                if(text.equals(mainText)){
+                switch (name_color){
+                    case (-65523):
+                        color = "red";
+                        //point_counter.setText("" + name_color);
+                        break;
+                    case (-157363):
+                        color = "green";
+                        //point_counter.setText("" + name_color);
+                        break;
+                    case (-11513776):
+                        color = "grey";
+                        //point_counter.setText("" + name_color);
+                        break;
+                }
+
+                //point_counter.setText(color);
+                if(buttonColorName.equals(color)){
                     counter[0] += 10;
                     String counterS = counter[0] + " pkt.";
                     point_counter.setText(counterS);
                 }
-                oldValue = random;
+
+//                else{
+//                    point_counter.setText("nie dziala");
+//                }
+//                String text = (String) sample_first.getText();
+//                String mainText = (String) mainColor.getText();
+//
+//                if(text.equals(mainText)){
+//                    counter[0] += 10;
+//                    String counterS = counter[0] + " pkt.";
+//                    point_counter.setText(counterS);
+//                }
+
             }
         });
 
@@ -111,6 +137,29 @@ public class EasyLevelActivity extends AppCompatActivity {
                 }
                 mainColor.setTextColor(arrayColors[random]);
                 oldValue = random;
+
+                String buttonColorName = (String) sample_second.getText();
+                String color = "green";
+
+                int name_color = mainColor.getCurrentTextColor();
+
+                switch (name_color) {
+                    case (-65523):
+                        color = "red";
+                        break;
+                    case (-157363):
+                        color = "green";
+                        break;
+                    case (-11513776):
+                        color = "grey";
+                        break;
+                }
+
+                if(color.equals(buttonColorName)){
+                    counter[0] += 10;
+                    String counterS = counter[0] + " pkt.";
+                    point_counter.setText(counterS);
+                }
             }
         });
 
@@ -127,10 +176,125 @@ public class EasyLevelActivity extends AppCompatActivity {
                 }
                 mainColor.setTextColor(arrayColors[random]);
                 oldValue = random;
+
+                String buttonColorName = (String) sample_third.getText();
+                String color = "green";
+
+                int name_color = mainColor.getCurrentTextColor();
+
+                switch (name_color) {
+                    case (-65523):
+                        color = "red";
+                        break;
+                    case (-157363):
+                        color = "green";
+                        break;
+                    case (-11513776):
+                        color = "grey";
+                        break;
+                }
+
+                if(color.equals(buttonColorName)){
+                    counter[0] += 10;
+                    String counterS = counter[0] + " pkt.";
+                    point_counter.setText(counterS);
+                }
             }
         });
+
+    }
+    */
+/*
+    public void addPoints(){
+
+        String buttonColorName1 = (String) sample_first.getText();
+        String buttonColorName2 = (String) sample_second.getText();
+        String buttonColorName3 = (String) sample_third.getText();
+        String color = "";
+
+        int name_color = mainColor.getCurrentTextColor();
+        //point_counter.setText(cos);
+        //point_counter.setText("" + name_color);
+
+        switch (name_color) {
+            case (-65523):
+                color = "red";
+                break;
+            case (-150225):
+                color = "green";
+                break;
+            case (-11513776):
+                color = "grey";
+                break;
+        }
+
+        if(color.equals(buttonColorName1)){
+            counter[0] += 10;
+            String counterS = counter[0] + " pkt.";
+            point_counter.setText(counterS);
+        }
+
+        if(color.equals(buttonColorName2)){
+            counter[0] += 10;
+            String counterS = counter[0] + " pkt.";
+            point_counter.setText(counterS);
+        }
+
+        if(color.equals(buttonColorName3)){
+            counter[0] += 10;
+            String counterS = counter[0] + " pkt.";
+            point_counter.setText(counterS);
+        }
+    }
+*/
+/*
+    public String findColor(){
+        String color = null;
+        final TextView mainColor = findViewById(R.id.mainSample);
+
+        switch (mainColor.getCurrentTextColor()) {
+            case -65536:
+                color = "red";
+                break;
+            case -16711936:
+                color = "green";
+                break;
+            case -7829368:
+                color = "grey";
+                break;
+        }
+        return color;
     }
 
+
+    public void cos(){
+
+        final TextView mainColor = findViewById(R.id.mainSample);
+        final Button sample_first = findViewById(R.id.sampleFirst);
+        final TextView point_counter = findViewById(R.id.points);
+        final int[] counter = {0};
+        String cos = (String) sample_first.getText();
+        String color = "vos";
+
+        switch (mainColor.getCurrentTextColor()) {
+            case -65536:
+                color = "red";
+                break;
+            case -16711936:
+                color = "green";
+                break;
+            case -7829368:
+                color = "grey";
+                break;
+        }
+
+        if(color.equals(cos)){
+            counter[0] += 10;
+            String counterS = counter[0] + " pkt.";
+            point_counter.setText(counterS);
+        }
+    }
+*/
     /*
     private static final boolean AUTO_HIDE = true;
     private static final int AUTO_HIDE_DELAY_MILLIS = 3000;

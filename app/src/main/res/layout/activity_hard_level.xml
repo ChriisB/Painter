@@ -13,7 +13,7 @@
         android:fitsSystemWindows="true">
 
         <Button
-            android:id="@+id/sampleSeventh"
+            android:id="@+id/sample7"
             android:layout_width="180dp"
             android:layout_height="52dp"
             android:layout_alignParentStart="true"
@@ -24,12 +24,12 @@
             android:fontFamily="@font/architects_daughter"
             android:text="@string/blue"
             android:textAllCaps="false"
-            android:textColor="@color/colorOrange"
+            android:textColor="@color/orange"
             android:textSize="30sp"
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/sampleEighth"
+            android:id="@+id/sample8"
             android:layout_width="180dp"
             android:layout_height="52dp"
             android:layout_alignParentStart="true"
@@ -40,12 +40,12 @@
             android:fontFamily="@font/architects_daughter"
             android:text="@string/yellow"
             android:textAllCaps="false"
-            android:textColor="@color/colorBlue"
+            android:textColor="@color/blue"
             android:textSize="30sp"
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/sampleNinth"
+            android:id="@+id/sample9"
             android:layout_width="180dp"
             android:layout_height="52dp"
             android:layout_alignParentStart="true"
@@ -56,12 +56,12 @@
             android:fontFamily="@font/architects_daughter"
             android:text="@string/orange"
             android:textAllCaps="false"
-            android:textColor="@color/colorYellow"
+            android:textColor="@color/yellow"
             android:textSize="30sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/timer3"
+            android:id="@+id/timer"
             android:layout_width="83dp"
             android:layout_height="29dp"
             android:layout_alignParentStart="true"
@@ -75,7 +75,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/points3"
+            android:id="@+id/points"
             android:layout_width="79dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/back_button"
@@ -88,12 +88,12 @@
             android:fontFamily="@font/architects_daughter"
             android:inputType="number"
             android:text="   .pkt"
-            android:textColor="@color/colorWhite"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/mainSample3"
+            android:id="@+id/main_sample"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -103,7 +103,7 @@
             android:fontFamily="@font/architects_daughter"
             android:gravity="center"
             android:text="@string/red"
-            android:textColor="@color/colorRed"
+            android:textColor="@color/red"
             android:textSize="60sp"
             android:textStyle="bold" />
 
@@ -116,11 +116,12 @@
             android:layout_gravity="top|right"
             android:layout_margin="15dp"
             android:layout_marginEnd="19dp"
-            android:onClick="backButton2"
-            app:srcCompat="@android:drawable/ic_menu_revert" />
+            android:onClick="backButton3"
+            app:srcCompat="@android:drawable/ic_menu_revert"
+            tools:ignore="OnClick" />
 
         <Button
-            android:id="@+id/sampleThird3"
+            android:id="@+id/sample3"
             android:layout_width="180dp"
             android:layout_height="52dp"
             android:layout_alignParentStart="true"
@@ -131,12 +132,12 @@
             android:fontFamily="@font/architects_daughter"
             android:text="@string/grey"
             android:textAllCaps="false"
-            android:textColor="@color/colorGreen"
+            android:textColor="@color/green"
             android:textSize="30sp"
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/sampleSixth2"
+            android:id="@+id/sample6"
             android:layout_width="180dp"
             android:layout_height="52dp"
             android:layout_alignParentStart="true"
@@ -147,12 +148,12 @@
             android:fontFamily="@font/architects_daughter"
             android:text="@string/brown"
             android:textAllCaps="false"
-            android:textColor="@color/colorPink"
+            android:textColor="@color/pink"
             android:textSize="30sp"
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/sampleFifth2"
+            android:id="@+id/sample5"
             android:layout_width="180dp"
             android:layout_height="52dp"
             android:layout_alignParentStart="true"
@@ -163,12 +164,12 @@
             android:fontFamily="@font/architects_daughter"
             android:text="@string/pink"
             android:textAllCaps="false"
-            android:textColor="@color/colorViolet"
+            android:textColor="@color/violet"
             android:textSize="30sp"
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/sampleSecond3"
+            android:id="@+id/sample2"
             android:layout_width="180dp"
             android:layout_height="52dp"
             android:layout_alignParentStart="true"
@@ -179,12 +180,12 @@
             android:fontFamily="@font/architects_daughter"
             android:text="@string/red"
             android:textAllCaps="false"
-            android:textColor="@color/colorGrey"
+            android:textColor="@color/grey"
             android:textSize="30sp"
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/sampleFirst3"
+            android:id="@+id/sample1"
             android:layout_width="180dp"
             android:layout_height="52dp"
             android:layout_alignParentStart="true"
@@ -195,12 +196,12 @@
             android:fontFamily="@font/architects_daughter"
             android:text="@string/green"
             android:textAllCaps="false"
-            android:textColor="@color/colorRed"
+            android:textColor="@color/red"
             android:textSize="30sp"
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/sampleFourth2"
+            android:id="@+id/sample4"
             android:layout_width="180dp"
             android:layout_height="52dp"
             android:layout_alignParentStart="true"
@@ -211,7 +212,7 @@
             android:fontFamily="@font/architects_daughter"
             android:text="@string/violet"
             android:textAllCaps="false"
-            android:textColor="@color/colorBrown"
+            android:textColor="@color/brown"
             android:textSize="30sp"
             android:textStyle="bold" />
 

@@ -1,6 +1,7 @@
 package application.chris.painter;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.CountDownTimer;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -10,11 +11,12 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 
-public class MediumLevelActivity extends AppCompatActivity {
+public class MediumLevelActivity extends LevelActivity {
 
 
     @Override
@@ -25,6 +27,7 @@ public class MediumLevelActivity extends AppCompatActivity {
         setContentView(R.layout.activity_medium_level);
 
         backButton2();
+
 
     }
 
@@ -38,6 +41,47 @@ public class MediumLevelActivity extends AppCompatActivity {
             }
         });
     }
+
+//    public void changeTextAndColorRandomly(){
+//
+//        final String[] namesOfColors = {"red", "green", "gray", "violet", "pink", "brown"};
+//        final int[] arrayColors = {Color.parseColor("#ff000d"), Color.parseColor("#1ac60e"), Color.parseColor("#505050"), Color.parseColor("#8800ff"), Color.parseColor("#ff00d9"), Color.parseColor("#803418")};
+//        final TextView mainColor = (TextView) findViewById(R.id.mainSample);
+//        final Button sample_first = (Button) findViewById(R.id.sampleFirst);
+//        final Button sample_second = (Button) findViewById(R.id.sampleSecond);
+//        final Button sample_third = (Button) findViewById(R.id.sampleThird);
+//        final TextView point_counter = (TextView) findViewById(R.id.points);
+//        final int[] counter = {0};
+//
+//        String colorStr = String.valueOf(getColor(R.color.red));
+//
+//        //String colorString = getTitleColor(R.color.red);
+//
+//        int name_color = mainColor.getCurrentTextColor();
+//        String color = "";
+//
+//        switch (name_color) {
+//            case (-65523):
+//                color = "red";
+//                break;
+//            case (-150225):
+//                color = "green";
+//                break;
+//            case (-11513776):
+//                color = "grey";
+//                break;
+//            case (-7864065):
+//                color = "violet";
+//                break;
+//            case (-65319):
+//                color = "pink";
+//                break;
+//            case (-8375272):
+//                color = "brown";
+//                break;
+//        }
+//
+//    }
 
     //String[] namesOfColors = {"red", "green", "gray", "violet", "brown", "pink"};
 

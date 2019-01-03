@@ -5,29 +5,30 @@
     <color name="colorAccent">#D81B60</color>
     <color name="black_overlay">#66000000</color>
 
-    <color name="colorRed">#ff000d</color>
-    <color name="colorGrey">#505050</color>
-    <color name="colorBlack">#000000</color>
-    <color name="colorGreen">#1ac60e</color>
-    <color name="colorViolet">#8800ff</color>
-    <color name="colorBrown">#803418</color>
-    <color name="colorPink">#ff00d9</color>
-    <color name="colorOrange">#ff6600</color>
-    <color name="colorBlue">#000dff</color>
-    <color name="colorYellow">#ffd900</color>
-    <color name="colorWhite">#ffffff</color>
+    <color name="red">#ff000d</color>
+    <color name="grey">#505050</color>
+    <color name="green">#0fe200</color>
+    <color name="black">#000000</color>
+    <color name="violet">#8800ff</color>
+    <color name="brown">#803418</color>
+    <color name="pink">#ff00d9</color>
+    <color name="orange">#ff6600</color>
+    <color name="blue">#000dff</color>
+    <color name="yellow">#ffd900</color>
+    <color name="white">#ffffff</color>
 
     <string-array name="colors">
-        <item>@color/colorRed</item>
-        <item>@color/colorGrey</item>
-        <item>@color/colorBlack</item>
-        <item>@color/colorGreen</item>
-        <item>@color/colorViolet</item>
-        <item>@color/colorBrown</item>
-        <item>@color/colorPink</item>
-        <item>@color/colorOrange</item>
-        <item>@color/colorBlue</item>
-        <item>@color/colorYellow</item>
+        <item>@color/red</item>
+        <item>@color/grey</item>
+        <item>@color/black</item>
+        <item>@color/green</item>
+        <item>@color/violet</item>
+        <item>@color/brown</item>
+        <item>@color/pink</item>
+        <item>@color/orange</item>
+        <item>@color/blue</item>
+        <item>@color/yellow</item>
+        <item>@color/white</item>
     </string-array>
 
 </resources>
