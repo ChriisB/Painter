@@ -32,12 +32,12 @@ public class SecondActivity extends AppCompatActivity {
     }
 
     public void backButton() {
-        final ImageButton backButton = (ImageButton) findViewById(R.id.back_button);
+        final ImageButton backButton = findViewById(R.id.back_button);
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                startActivity(new Intent(getApplicationContext(), FirstActivity.class));
             }
         });
     }

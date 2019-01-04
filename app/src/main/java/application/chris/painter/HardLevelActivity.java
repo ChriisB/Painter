@@ -28,6 +28,8 @@ public class HardLevelActivity extends LevelActivity {
         point_counter = findViewById(R.id.points);
         timer = findViewById(R.id.timer);
         intent.putExtra("activity_name", HardLevelActivity.class);
+        tick_correct = findViewById(R.id.tick_correct);
+        tick_wrong = findViewById(R.id.tick_wrong);
 
         backButton();
         counter();

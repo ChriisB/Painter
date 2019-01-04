@@ -14,6 +14,9 @@ import android.widget.TextView;
 
 public class Result extends AppCompatActivity {
 
+    Bundle extras;
+    Class nextActivityClass;
+
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,35 +44,15 @@ public class Result extends AppCompatActivity {
             high_score.setText("High Score: " + highScore);
         }
     }
-    
-
 
     public void tryAgain(View view) {
 
-        Bundle extras = getIntent().getExtras();
-        Class nextActivityClass = (Class<Activity>)extras.getSerializable("activity_name");
+        extras = getIntent().getExtras();
+        nextActivityClass = (Class<Activity>) extras.getSerializable("activity_name");
 
         Intent intent = new Intent(Result.this, nextActivityClass);
         startActivity(intent);
     }
-
-
-
-//        String classname = extras.getString("activity_name");
-//        Class<?> clazz = null;
-//        {
-//            try {
-//                assert classname != null;
-//                clazz = Class.forName(classname);
-//            } catch (ClassNotFoundException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//
-//
-//        Intent i = new Intent(Result.this, clazz);
-//        startActivity(i);
-
 
     public void backToChooseLevelActivity(View view) {
         startActivity(new Intent(getApplicationContext(), SecondActivity.class));

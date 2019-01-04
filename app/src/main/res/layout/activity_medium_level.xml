@@ -170,14 +170,39 @@
             android:textSize="30sp"
             android:textStyle="bold" />
 
-        <LinearLayout
-            android:id="@+id/fullscreen_content_controls"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/black_overlay"
-            android:orientation="horizontal">
+        <Button
+            android:id="@+id/tick_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="103dp"
+            android:background="@mipmap/back_tick" />
 
-        </LinearLayout>
+        <Button
+            android:id="@+id/tick_correct"
+            android:layout_width="80dp"
+            android:layout_height="82dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="75dp"
+            android:background="@mipmap/tick_yes"
+            android:visibility="invisible"/>
+
+        <Button
+            android:id="@+id/tick_wrong"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="94dp"
+            android:background="@mipmap/tick_no"
+            android:visibility="invisible"/>
+        <!--<LinearLayout-->
+            <!--android:id="@+id/fullscreen_content_controls"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@color/black_overlay"-->
+            <!--android:orientation="horizontal">-->
+
+        <!--</LinearLayout>-->
 
     </RelativeLayout>
 

@@ -2,6 +2,7 @@ package application.chris.painter;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
@@ -11,10 +12,13 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
+import java.util.logging.Handler;
+import java.util.logging.LogRecord;
 
 public abstract class LevelActivity extends AppCompatActivity {
 
@@ -27,7 +31,9 @@ public abstract class LevelActivity extends AppCompatActivity {
     TextView point_counter;
     TextView timer;
     String counterS;
-
+    Button tick_correct;
+    Button tick_wrong;
+    //protected MediaPlayer clickSound;
 //    ProgressBar mProgressBar;
 //    CountDownTimer mCountDownTimer;
 //    protected int i = 0;
@@ -42,6 +48,9 @@ public abstract class LevelActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         intent = new Intent(getApplicationContext(), Result.class);
+        tick_correct = findViewById(R.id.tick_correct);
+        tick_wrong = findViewById(R.id.tick_wrong);
+        MediaPlayer.create(this, R.raw.cat_meow);
         //start_textview = findViewById(R.id.start_textview);
         //progressBarTimer();
 
@@ -64,9 +73,7 @@ public abstract class LevelActivity extends AppCompatActivity {
             public void onTick(long millisUntilFinished) {
                 timer.setText("" + millisUntilFinished / 1000);
             }
-
             public void onFinish() {
-                //timer.setText("done!");
                 startActivity(intent);
             }
         }.start();
@@ -117,12 +124,25 @@ public abstract class LevelActivity extends AppCompatActivity {
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Button button = (Button) v;
+                final Button button = (Button) v;
                 if(colors.get(button.getText()) == mainSample.getTextColors().getDefaultColor()){
                     counter += 10;
                     counterS = counter + " pkt.";
                     point_counter.setText(counterS);
                     intent.putExtra("SCORE", counter);
+                    tick_correct.setVisibility(View.VISIBLE);
+                    tick_correct.postDelayed(new Runnable() {
+                        public void run() {
+                            tick_correct.setVisibility(View.INVISIBLE);
+                        }
+                    }, 200);
+                }else{
+                    tick_wrong.setVisibility(View.VISIBLE);
+                    tick_wrong.postDelayed(new Runnable() {
+                        public void run() {
+                            tick_wrong.setVisibility(View.INVISIBLE);
+                        }
+                    }, 200);
                 }
                 randomlyChangeColors();
             }
