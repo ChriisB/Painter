@@ -2,6 +2,7 @@ package application.chris.painter;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.Process;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -38,10 +39,11 @@ public class FirstActivity extends AppCompatActivity {
     }
     public void exitButton() {
         final ImageButton exitButton = findViewById(R.id.exitButton);
-
         exitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                moveTaskToBack(true);
+                //Process.killProcess(Process.myPid());
                 System.exit(0);
             }
         });
