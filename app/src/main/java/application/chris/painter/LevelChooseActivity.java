@@ -1,36 +1,35 @@
 package application.chris.painter;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.os.Handler;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
-//import static application.chris.painter.R.id.sampleFirst;
+/**
+ * Klasa odpowiadająca za utworzenie aktywności, w której dokonujemy wyboru poziomu gry
+ */
 
-
-public class SecondActivity extends AppCompatActivity {
-
+public class LevelChooseActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        /**Wywołanie metod odpowiadających za ustawienie pełnego ekranu w danej aktywności*/
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_second);
-
+        /**Załadowanie przygotowanego pliku XML z layoutem - activity_level_choose*/
+        setContentView(R.layout.activity_level_choose);
+        /**Deklaracja metody odpowiadającej za przejście do odpowiednich aktywności
+         * odpowiedzialnych za różne poziomy gry.
+         * */
         LevelChooseButtons();
+        /**Deklaracja metody odpowiadającej za obsługę przycisku powrotudo poprzedniej aktywności*/
         backButton();
     }
-
+    /**Definicja metody odpowiadającej za obsługę przycisku powrotudo poprzedniej aktywności*/
     public void backButton() {
         final ImageButton backButton = findViewById(R.id.back_button);
 
@@ -41,34 +40,34 @@ public class SecondActivity extends AppCompatActivity {
             }
         });
     }
-
-
-
+    /**Definicja metody odpowiadającej za przejście do odpowiednich aktywności
+     * odpowiedzialnych za różne poziomy gry.*/
     public void LevelChooseButtons(){
-        final ImageButton  EasyLevelButton = (ImageButton) findViewById(R.id.easyButton);
-        ImageButton  MediumLevelButton = (ImageButton) findViewById(R.id.mediumButton);
-        ImageButton  HardLevelButton = (ImageButton) findViewById(R.id.hardButton);
+        ImageButton  EasyLevelButton = findViewById(R.id.easyButton);
+        ImageButton  MediumLevelButton = findViewById(R.id.mediumButton);
+        ImageButton  HardLevelButton = findViewById(R.id.hardButton);
 
         EasyLevelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SecondActivity.this, EasyLevelActivity.class));
+                startActivity(new Intent(LevelChooseActivity.this, EasyLevelActivity.class));
             }
         });
 
         MediumLevelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SecondActivity.this, MediumLevelActivity.class));
+                startActivity(new Intent(LevelChooseActivity.this, MediumLevelActivity.class));
             }
         });
 
         HardLevelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SecondActivity.this, HardLevelActivity.class));
+                startActivity(new Intent(LevelChooseActivity.this, HardLevelActivity.class));
             }
         });
 
-    }
-}
+    }//Koniec LevelChooseButtons
+
+}//Koniec klasy LevelChooseActivity

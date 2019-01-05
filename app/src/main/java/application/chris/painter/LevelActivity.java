@@ -12,61 +12,59 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
-import java.util.logging.Handler;
-import java.util.logging.LogRecord;
+
+/**
+ * Klasa, po której dziedziczą klasy: EasyLevelActivity, MediumLevelActivity oraz HardLevelActivity
+ * Zdefioniowane są w niej metody wykorzystywane w klasach odpowiadających różnym poziomom gry
+ */
 
 public abstract class LevelActivity extends AppCompatActivity {
 
+    /**Kolekcja par typu klucz (key), którym w tym przypadku jest nazwa koloru oraz wartości (value), którą jest wartość danego koloru*/
     protected HashMap<String, Integer> colors = new HashMap<>();
+    /**Lista przycisków używanych podczas wywołania odpowiednich poziomów gry*/
     protected ArrayList<Button> buttons = new ArrayList<>();
+    /**Deklaracja intencji*/
     Intent intent;
-    protected TextView mainSample;
+    /**Inicjalizacja funkcji losującej*/
     protected Random random = new Random();
+    /**Zmienna wykorzystana do zliczania punktów zdobytych podczas gry*/
     protected int counter = 0;
+    /**Zmienna wykorzystana do wyświetlenia punktów zdobytych podczas gry*/
+    String counterS;
+    /**Deklaracje komponentów*/
+    protected TextView mainSample;
     TextView point_counter;
     TextView timer;
-    String counterS;
     Button tick_correct;
     Button tick_wrong;
-    //protected MediaPlayer clickSound;
-//    ProgressBar mProgressBar;
-//    CountDownTimer mCountDownTimer;
-//    protected int i = 0;
-
-//    final Handler handler = new Handler();
-//    TextView start_textview;
-//    java.util.concurrent.atomic.AtomicInteger n = new AtomicInteger(3);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        /**Definicja intencji, w której przekazana jest klasa Result*/
         intent = new Intent(getApplicationContext(), Result.class);
         tick_correct = findViewById(R.id.tick_correct);
         tick_wrong = findViewById(R.id.tick_wrong);
-        MediaPlayer.create(this, R.raw.cat_meow);
-        //start_textview = findViewById(R.id.start_textview);
-        //progressBarTimer();
-
     }
-
+    /**Definicja metody odpowiadającej za obsługę przycisku powrotudo poprzedniej aktywności*/
     public void backButton() {
         final ImageButton backButton = findViewById(R.id.back_button);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), SecondActivity.class));
+                startActivity(new Intent(getApplicationContext(), LevelChooseActivity.class));
             }
         });
     }
-
-    public void counter(){
+    /**Licznik czasu pozostałego do końca rundy*/
+    public void timer(){
         new CountDownTimer(31000, 1000) {
 
             @SuppressLint("SetTextI18n")
@@ -78,26 +76,7 @@ public abstract class LevelActivity extends AppCompatActivity {
             }
         }.start();
     }
-
-//    public void progressBarTimer(){
-//        mProgressBar.setProgress(i);
-//        mCountDownTimer = new CountDownTimer(5000,1000) {
-//
-//            @Override
-//            public void onTick(long millisUntilFinished) {
-//                Log.v("Log_tag", "Tick of Progress"+ i + millisUntilFinished);
-//                i++;
-//                mProgressBar.setProgress(i*100/(5000/1000));
-//            }
-//            @Override
-//            public void onFinish() {
-//                i++;
-//                mProgressBar.setProgress(100);
-//            }
-//        };
-//        mCountDownTimer.start();
-//    }
-
+    /**Metoda generująca losowy kolor oraz nazwę koloru na przyciskach.*/
     public void randomlyChangeColors(){
         ArrayList<String> colorNames = new ArrayList<>(colors.keySet());
         ArrayList<Integer> colorValues = new ArrayList<>(colors.values());
@@ -116,10 +95,10 @@ public abstract class LevelActivity extends AppCompatActivity {
 
             colorNames.remove(colorNameIndex);
             colorValues.remove(colorValuesIndex);
-
         }
     }
-
+    /**Metody obsługująca akcję wciśnięcia przycisku i jednocześnie sprawdzająca poprawność udzielonej odpowiedzi.
+     * */
     public void addButtonListener(){
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
@@ -150,5 +129,7 @@ public abstract class LevelActivity extends AppCompatActivity {
         for (Button button : buttons){
             button.setOnClickListener(listener);
         }
-    }
-}
+
+    }//Koniec addButtonListener()
+
+}//Koniec klasy LevelActivity
