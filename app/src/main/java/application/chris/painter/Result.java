@@ -17,8 +17,6 @@ import android.widget.TextView;
  */
 
 public class Result extends AppCompatActivity {
-
-    private static final Object EasyLevelActivity = application.chris.painter.EasyLevelActivity.class;
     Bundle extras;
     Class nextActivityClass;
     TextView high_score;
@@ -76,17 +74,43 @@ public class Result extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(), LevelChooseActivity.class));
     }
 
-    /**Metoda odpowiadająca za zmianę najwyższego osiągniętego przez gracza wyniku*/
+    /**Metoda odpowiadająca za zmianę najwyższego osiągniętego przez gracza wyniku zależnie od wybranego poziomu gry*/
     public void highScoreChange(){
-            if(counter > highScore_on_easy_level){
+
+        extras = getIntent().getExtras();
+        nextActivityClass = (Class<Activity>) extras.getSerializable("activity_name");
+
+        if(nextActivityClass == EasyLevelActivity.class) {
+            if (counter > highScore_on_easy_level) {
                 high_score.setText("High Score: " + counter);
 
                 SharedPreferences.Editor editor1 = settings1.edit();
                 editor1.putInt("HIGH_SCORE_EASY_LEVEL", counter);
                 editor1.commit();
-            }else{
+            } else {
                 high_score.setText("High Score: " + highScore_on_easy_level);
             }
+        }else if (nextActivityClass == MediumLevelActivity.class){
+            if (counter > highScore_on_medium_level) {
+                high_score.setText("High Score: " + counter);
+
+                SharedPreferences.Editor editor1 = settings2.edit();
+                editor1.putInt("HIGH_SCORE_MEDIUM_LEVEL", counter);
+                editor1.commit();
+            } else {
+                high_score.setText("High Score: " + highScore_on_medium_level);
+            }
+        }else if (nextActivityClass == HardLevelActivity.class){
+            if (counter > highScore_on_hard_level) {
+                high_score.setText("High Score: " + counter);
+
+                SharedPreferences.Editor editor1 = settings3.edit();
+                editor1.putInt("HIGH_SCORE_HARD_LEVEL", counter);
+                editor1.commit();
+            } else {
+                high_score.setText("High Score: " + highScore_on_hard_level);
+            }
         }
+    }
 
 }//Koniec klasy Result
