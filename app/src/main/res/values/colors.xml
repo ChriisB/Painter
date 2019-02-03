@@ -6,15 +6,15 @@
     <color name="black_overlay">#66000000</color>
 
     <color name="red">#ff000d</color>
-    <color name="grey">#505050</color>
+    <color name="grey">#646464</color>
     <color name="cyan">#02f7d7</color>
     <color name="black">#000000</color>
-    <color name="violet">#8800ff</color>
-    <color name="brown">#803418</color>
+    <color name="violet">#8d1fed</color>
+    <color name="brown">#a14320</color>
     <color name="pink">#ff00d9</color>
-    <color name="orange">#ff6600</color>
+    <color name="orange">#ff6d0c</color>
     <color name="blue">#000dff</color>
-    <color name="yellow">#ffd900</color>
+    <color name="yellow">#ffde20</color>
     <color name="white">#ffffff</color>
 
     <string-array name="colors">

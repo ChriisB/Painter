@@ -1,6 +1,7 @@
 package application.chris.painter;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -38,6 +39,7 @@ public abstract class LevelActivity extends AppCompatActivity {
     String counterS;
     /**Deklaracje komponentów*/
     protected TextView mainSample;
+    protected ImageButton backButton;
     TextView point_counter;
     TextView timer;
     Button tick_correct;
@@ -55,7 +57,7 @@ public abstract class LevelActivity extends AppCompatActivity {
     }
     /**Definicja metody odpowiadającej za obsługę przycisku powrotudo poprzedniej aktywności*/
     public void backButton() {
-        final ImageButton backButton = findViewById(R.id.back_button);
+        backButton = findViewById(R.id.back_button);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,7 +68,6 @@ public abstract class LevelActivity extends AppCompatActivity {
     /**Licznik czasu pozostałego do końca rundy*/
     public void timer(){
         new CountDownTimer(31000, 1000) {
-
             @SuppressLint("SetTextI18n")
             public void onTick(long millisUntilFinished) {
                 timer.setText("" + millisUntilFinished / 1000);

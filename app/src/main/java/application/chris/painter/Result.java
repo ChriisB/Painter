@@ -22,10 +22,9 @@ public class Result extends AppCompatActivity {
     TextView high_score;
     TextView player_score;
     int counter;
-    SharedPreferences settings1;
-    SharedPreferences settings2;
-    SharedPreferences settings3;
-    //int highScore;
+    SharedPreferences easy_level_settings;
+    SharedPreferences medium_level_settings;
+    SharedPreferences hard_level_settings;
     int highScore_on_easy_level;
     int highScore_on_medium_level;
     int highScore_on_hard_level;
@@ -46,13 +45,13 @@ public class Result extends AppCompatActivity {
         /**Ustawienie wyniku punktowego w widoku*/
         player_score.setText("Your Score: " + counter);
         /**Zmienna przechowująca dane, które dostępne są po wyłączeniu aplikacji*/
-        settings1 = getSharedPreferences("Game Data", Context.MODE_PRIVATE);
-        settings2 = getSharedPreferences("Game Data", Context.MODE_PRIVATE);
-        settings3 = getSharedPreferences("Game Data", Context.MODE_PRIVATE);
+        easy_level_settings = getSharedPreferences("Game Data", Context.MODE_PRIVATE);
+        medium_level_settings = getSharedPreferences("Game Data", Context.MODE_PRIVATE);
+        hard_level_settings = getSharedPreferences("Game Data", Context.MODE_PRIVATE);
         /**Zmienna przechowująca najwyższy wynik uzyskany, na danym poziomie trudności*/
-        highScore_on_easy_level = settings1.getInt("HIGH_SCORE_EASY_LEVEL", 0);
-        highScore_on_medium_level = settings2.getInt("HIGH_SCORE_MEDIUM_LEVEL", 0);
-        highScore_on_hard_level = settings3.getInt("HIGH_SCORE_HaRD_LEVEL", 0);
+        highScore_on_easy_level = easy_level_settings.getInt("HIGH_SCORE_EASY_LEVEL", 0);
+        highScore_on_medium_level = medium_level_settings.getInt("HIGH_SCORE_MEDIUM_LEVEL", 0);
+        highScore_on_hard_level = hard_level_settings.getInt("HIGH_SCORE_HaRD_LEVEL", 0);
 
         /**Deklaracja metody odpowiadającej za zmianę najwyższego osiągniętego przez gracza wyniku*/
         highScoreChange();
@@ -84,7 +83,7 @@ public class Result extends AppCompatActivity {
             if (counter > highScore_on_easy_level) {
                 high_score.setText("High Score: " + counter);
 
-                SharedPreferences.Editor editor1 = settings1.edit();
+                SharedPreferences.Editor editor1 = easy_level_settings.edit();
                 editor1.putInt("HIGH_SCORE_EASY_LEVEL", counter);
                 editor1.commit();
             } else {
@@ -94,7 +93,7 @@ public class Result extends AppCompatActivity {
             if (counter > highScore_on_medium_level) {
                 high_score.setText("High Score: " + counter);
 
-                SharedPreferences.Editor editor1 = settings2.edit();
+                SharedPreferences.Editor editor1 = medium_level_settings.edit();
                 editor1.putInt("HIGH_SCORE_MEDIUM_LEVEL", counter);
                 editor1.commit();
             } else {
@@ -104,7 +103,7 @@ public class Result extends AppCompatActivity {
             if (counter > highScore_on_hard_level) {
                 high_score.setText("High Score: " + counter);
 
-                SharedPreferences.Editor editor1 = settings3.edit();
+                SharedPreferences.Editor editor1 = hard_level_settings.edit();
                 editor1.putInt("HIGH_SCORE_HARD_LEVEL", counter);
                 editor1.commit();
             } else {

@@ -1,23 +1,8 @@
 package application.chris.painter;
 
-import android.annotation.SuppressLint;
-import android.graphics.Color;
-import android.os.CountDownTimer;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.TextView;
-
-import java.util.Objects;
-import java.util.Random;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.logging.Handler;
-import java.util.logging.LogRecord;
 
 /**
  * Klasa rozszerzająca klasę LevelActivity, odpowiada za tworzenie i obsługę ekranu dla łatwego poziomu gry
