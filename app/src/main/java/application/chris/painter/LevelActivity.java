@@ -1,9 +1,7 @@
 package application.chris.painter;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
@@ -44,6 +42,7 @@ public abstract class LevelActivity extends AppCompatActivity {
     TextView timer;
     Button tick_correct;
     Button tick_wrong;
+    CountDownTimer time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,19 +54,23 @@ public abstract class LevelActivity extends AppCompatActivity {
         tick_correct = findViewById(R.id.tick_correct);
         tick_wrong = findViewById(R.id.tick_wrong);
     }
-    /**Definicja metody odpowiadającej za obsługę przycisku powrotudo poprzedniej aktywności*/
+    /**Definicja metody odpowiadającej za obsługę przycisku powrotu do poprzedniej aktywności*/
     public void backButton() {
         backButton = findViewById(R.id.back_button);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(time != null) {
+                    time.cancel();
+                    time = null;
+                }
                 startActivity(new Intent(getApplicationContext(), LevelChooseActivity.class));
             }
         });
     }
     /**Licznik czasu pozostałego do końca rundy*/
     public void timer(){
-        new CountDownTimer(31000, 1000) {
+        time = new CountDownTimer(31000, 1000) {
             @SuppressLint("SetTextI18n")
             public void onTick(long millisUntilFinished) {
                 timer.setText("" + millisUntilFinished / 1000);

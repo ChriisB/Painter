@@ -23,6 +23,6 @@
         android:layout_gravity="top|right"
         android:layout_margin="15dp"
         android:onClick="exitButton"
-        app:srcCompat="@android:drawable/close_button" />
+        app:srcCompat="@mipmap/close_button" />
 
 </FrameLayout>
